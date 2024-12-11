@@ -6,7 +6,8 @@
 
 using namespace sf;
 
-class Screen {
+class Screen
+{
 private:
     int resolutionX;
     int resolutionY;
@@ -14,10 +15,10 @@ private:
 
 public:
     RenderWindow window;
-    Screen(): window(VideoMode(1200, 800), "Game Menu System") {
+    Screen() : window(VideoMode(1200, 800), "Game Menu System")
+    {
         resolutionX = 1200;
         resolutionY = 800;
         window.setFramerateLimit(FPS);
     }
-
 };
