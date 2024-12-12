@@ -82,7 +82,7 @@ public:
 
     HangmanFigure() : lives(6) {
         
-        const string fileNames[] = {"hangmanpic/pics/bg7.png","hangmanpic/pics/bg6.png","hangmanpic/pics/bg5.png","hangmanpic/pics/bg4.png","hangmanpic/pics/bg3.png","hangmanpic/pics/bg2.png","hangmanpic/pics/bg1.png"
+        const string fileNames[] = {"hangmanpic/pics/bg7.jpg","hangmanpic/pics/bg6.jpg","hangmanpic/pics/bg5.jpg","hangmanpic/pics/bg4.jpg","hangmanpic/pics/bg3.jpg","hangmanpic/pics/bg2.jpg","hangmanpic/pics/bg1.jpg"
         };
 
         for (int i = 0; i < 7; i++) {

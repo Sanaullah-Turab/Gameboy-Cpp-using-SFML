@@ -210,7 +210,7 @@ public:
         Sprite background, wordelback, snackback;
         Texture t1, t2, t3;
 
-        if (!t1.loadFromFile("hangmanpic/back.png"))
+        if (!t1.loadFromFile("hangmanpic/back.jpg"))
         {
             cout << "Error loading texture" << endl;
             return;
