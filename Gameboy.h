@@ -217,14 +217,14 @@ public:
         }
         background.setTexture(t1);
 
-        if (!t2.loadFromFile("Wordlegamepic/wordle_11zon.png"))
+        if (!t2.loadFromFile("Wordlegamepic/wordle_11zon.jpg"))
         {
             cout << "Error loading texture" << endl;
             return;
         }
         wordelback.setTexture(t2);
 
-        if (!t3.loadFromFile("Snakegamepic/snackback_11zon.png"))
+        if (!t3.loadFromFile("Snakegamepic/snackback_11zon.jpg"))
         {
             cout << "Error loading texture" << endl;
             return;

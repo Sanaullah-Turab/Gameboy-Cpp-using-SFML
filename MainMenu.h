@@ -31,7 +31,7 @@ public:
         }
 
         if (isMain) {
-            if (!back.loadFromFile("Gameboypic/Game_11zon.png")) {
+            if (!back.loadFromFile("Gameboypic/Game_11zon.jpg")) {
                 cout << "Error loading texture" << endl;
                 return;
             }

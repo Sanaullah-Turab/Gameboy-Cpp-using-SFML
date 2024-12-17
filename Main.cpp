@@ -15,6 +15,8 @@ int main() {
     return 0;
 }
 
+
+
 #pragma once
 
 // Main includes for SFML library and other utilities

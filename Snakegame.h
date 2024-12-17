@@ -130,7 +130,7 @@ private:
 
 public:
     SnakeGame() : Game() {
-        texture.loadFromFile("snakegamepic/snake-graphics_11zon.png");
+        texture.loadFromFile("snakegamepic/snake-graphics_11zon.jpg");
         sprite.setTexture(texture);
         gameOver = false;
         score = 0;
@@ -364,7 +364,7 @@ public:
         soundSystem.musicplay("snakegamesound/music/music.ogg"); // game sound
         int musicVolume = 50;
         soundSystem.adjustmusicVolume(musicVolume);
-        if (!t1.loadFromFile("snakegamepic/background_11zon.png")) {
+        if (!t1.loadFromFile("snakegamepic/background_11zon.jpg")) {
             cout << "Error loading texture" << endl;
             return;
         }

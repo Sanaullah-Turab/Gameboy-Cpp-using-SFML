@@ -7,7 +7,7 @@ using namespace sf;
 bool showNintendoTransition(RenderWindow& window) {
     //declaring textre of the picture
     Texture ninten;
-    if (!ninten.loadFromFile("gameboypic/nintendo.png")) {
+    if (!ninten.loadFromFile("gameboypic/nintendo.jpg")) {
         cout << "Error in loading picutre " << endl;
         return false;
     }

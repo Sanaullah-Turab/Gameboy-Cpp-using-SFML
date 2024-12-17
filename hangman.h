@@ -89,12 +89,12 @@ public:
             if (!hangmanTextures[i].loadFromFile(fileNames[i])) {
                 cerr << "Error loading hangman texture " << fileNames[i] << endl;
             }
-            if (!t1.loadFromFile("hangmanpic/hangman.png")) {
+            if (!t1.loadFromFile("hangmanpic/hangman.jpg")) {
                 cerr << "Error loading hangman texture " << fileNames[i] << endl;
             }
 
         }
-         if (!t1.loadFromFile("hangmanpic/back.png")) {
+         if (!t1.loadFromFile("hangmanpic/back.jpg")) {
         cout << "Error loading texture" << endl;
         return;
     }
@@ -439,4 +439,3 @@ public:
         }
     }
 };
-
