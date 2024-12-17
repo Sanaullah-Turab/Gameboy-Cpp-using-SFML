@@ -1,36 +1,23 @@
 {
-    "configurations": [
-        {
-            "name": "Win32",
-            "includePath": [
-                "${workspaceFolder}/**",
-                "C:/SFML/include"
-            ],
-            "defines": [
-                "_DEBUG",
-                "UNICODE",
-                "_UNICODE"
-            ],
-            "compilerPath": "C:/mingw64/bin/g++.exe",
-            "cStandard": "c11",
-            "cppStandard": "c++17",
-            "intelliSenseMode": "windows-gcc-x64",
-            "browse": {
-                "path": [
-                    "${workspaceFolder}",
-                    "C:/SFML/include"
-                ],
-                "limitSymbolsToIncludedHeaders": true,
-                "databaseFilename": ""
-            },
-            "forcedInclude": [],
-            "compilerArgs": [
-                "-lsfml-audio",
-                "-lsfml-graphics",
-                "-lsfml-window",
-                "-lsfml-system"
-            ]
-        }
-    ],
-    "version": 4
+  "configurations": [
+    {
+      "name": "Linux",
+
+      "includePath": [
+        "${workspaceFolder}/**",
+        "/usr/include/c++/13", // C++ standard library includes for GCC 13
+        "/usr/include/x86_64-linux-gnu/c++/13", // GCC includes for your architecture
+        "/usr/include/c++/13/backward", // C++ backward compatibility for GCC 13
+        "/usr/include", // General system includes
+        "/usr/local/include", // Custom libraries (e.g., SFML)
+        "/usr/include/SFML" // SFML includes
+      ],
+      "defines": [],
+      "compilerPath": "/usr/bin/g++",
+      "cStandard": "c17",
+      "cppStandard": "gnu++17",
+      "intelliSenseMode": "linux-gcc-x64"
+    }
+  ],
+  "version": 4
 }
