@@ -1,0 +1,23 @@
+{
+  "configurations": [
+    {
+      "name": "Linux",
+
+      "includePath": [
+        "${workspaceFolder}/**",
+        "/usr/include/c++/13", // C++ standard library includes for GCC 13
+        "/usr/include/x86_64-linux-gnu/c++/13", // GCC includes for your architecture
+        "/usr/include/c++/13/backward", // C++ backward compatibility for GCC 13
+        "/usr/include", // General system includes
+        "/usr/local/include", // Custom libraries (e.g., SFML)
+        "/usr/include/SFML" // SFML includes
+      ],
+      "defines": [],
+      "compilerPath": "/usr/bin/g++",
+      "cStandard": "c17",
+      "cppStandard": "gnu++17",
+      "intelliSenseMode": "linux-gcc-x64"
+    }
+  ],
+  "version": 4
+}
