@@ -39,8 +39,7 @@
                 "${fileDirname}\\${fileBasenameNoExtension}.exe", // Output executable
                 "-lsfml-graphics",                   // Link SFML Graphics
                 "-lsfml-window",                     // Link SFML Window
-                "-lsfml-system",
-                "-lsml-audio"                      // Link SFML System
+                "-lsfml-system"                      // Link SFML System
             ],
             "options": {
                 "cwd": "${fileDirname}"              // Current working directory
