@@ -5,45 +5,50 @@
 using namespace std;
 using namespace sf;
 
-class MenuSystem {
+class MenuSystem
+{
 private:
     int selectedItemIndex;
     Font font;
     Text menuItems[6];
     int menuItemCount;
-    //bool isOptionsMenu;// Track if we're in the options menu
+    // bool isOptionsMenu;// Track if we're in the options menu
     Sprite background;
     Texture back;
     bool isMainMenu;
     bool howtoplay;
     Text instruction;
-    //bool vfxEnabled; // Option states
+    // bool vfxEnabled; // Option states
 
-
-    const char* instructions[5]; // Array to store instructions for each menu item.
+    const char *instructions[5]; // Array to store instructions for each menu item.
 
 public:
     MenuSystem(float width, float height, bool isMain = true)
-        : selectedItemIndex(0), isMainMenu(isMain), menuItemCount(0), howtoplay(false) {
-        if (!font.loadFromFile("Fonts/arial/arial.ttf")) {
+        : selectedItemIndex(0), isMainMenu(isMain), menuItemCount(0), howtoplay(false)
+    {
+        if (!font.loadFromFile("Fonts/arial/arial.ttf"))
+        {
             cout << "Error loading font" << endl;
             return;
         }
 
-        if (isMain) {
-            if (!back.loadFromFile("Gameboypic/Game_11zon.jpg")) {
+        if (isMain)
+        {
+            if (!back.loadFromFile("Gameboypic/Game_11zon.jpg"))
+            {
                 cout << "Error loading texture" << endl;
                 return;
             }
             background.setTexture(back);
         }
 
-        const char* items[6];
+        const char *items[6];
         float xPosition;
 
-        if (isMain) {
+        if (isMain)
+        {
             items[0] = "Snake Game";
-            items[1] = "Wordly";
+            items[1] = "Wordle";
             items[2] = "HangMan";
             items[3] = "Leaderboard";
             items[4] = "Exit";
@@ -56,25 +61,27 @@ public:
             instructions[2] = "HangMan Instructions:\nGuess the word by typing letters.\nYou have 6 lives. Good luck!";
             instructions[3] = ""; // Exit has no instructions.
         }
-        //else if (isOptionsMenu) {
-        //    items[0] = "VFX: ON"; // Default state
-        //    items[1] = "Sound: ON"; // Default state
-        //    items[2] = "Back to Main Menu";
-        //    menuItemCount = 3;
-        //    xPosition = width / 2.0f;
-        //}
-        else {
+        // else if (isOptionsMenu) {
+        //     items[0] = "VFX: ON"; // Default state
+        //     items[1] = "Sound: ON"; // Default state
+        //     items[2] = "Back to Main Menu";
+        //     menuItemCount = 3;
+        //     xPosition = width / 2.0f;
+        // }
+        else
+        {
             items[0] = "Play";
             items[1] = "Load Game";
             items[2] = "How to Play";
             items[3] = "Main Menu";
             items[4] = "Exit";
-            //items[5] = "";
+            // items[5] = "";
             menuItemCount = 5;
             xPosition = width / 2.0f;
         }
 
-        for (int i = 0; i < menuItemCount; i++) {
+        for (int i = 0; i < menuItemCount; i++)
+        {
             menuItems[i].setFont(font);
             menuItems[i].setCharacterSize(24);
             menuItems[i].setString(items[i]);
@@ -88,21 +95,26 @@ public:
         instruction.setPosition(50.f, 100.f);
     }
 
-    void draw(RenderWindow& window) {
-        if (isMainMenu) {
+    void draw(RenderWindow &window)
+    {
+        if (isMainMenu)
+        {
             window.draw(background);
         }
 
         // Only draw menu items if not showing instructions
-        if (!howtoplay) {
-            for (int i = 0; i < menuItemCount; i++) {
+        if (!howtoplay)
+        {
+            for (int i = 0; i < menuItemCount; i++)
+            {
                 window.draw(menuItems[i]);
             }
         }
-        else {
+        else
+        {
             // Create a semi-transparent background
             RectangleShape backdrop(Vector2f(800, 400));
-            backdrop.setFillColor(Color(0, 0, 0, 180));  // Black with 180/255 alpha
+            backdrop.setFillColor(Color(0, 0, 0, 180)); // Black with 180/255 alpha
             backdrop.setPosition(200, 200);
             window.draw(backdrop);
 
@@ -127,46 +139,51 @@ public:
         }
     }
 
-
-
-
-    void MoveUp() {
-        if (selectedItemIndex >= 0) {
+    void MoveUp()
+    {
+        if (selectedItemIndex >= 0)
+        {
             menuItems[selectedItemIndex].setFillColor(isMainMenu ? Color::Black : Color::White);
             selectedItemIndex--;
-            if (selectedItemIndex == -1) {
+            if (selectedItemIndex == -1)
+            {
                 selectedItemIndex = menuItemCount - 1;
             }
             menuItems[selectedItemIndex].setFillColor(Color::Red);
         }
     }
 
-    void MoveDown() {
-        if (selectedItemIndex < menuItemCount) {
+    void MoveDown()
+    {
+        if (selectedItemIndex < menuItemCount)
+        {
             menuItems[selectedItemIndex].setFillColor(isMainMenu ? Color::Black : Color::White);
             selectedItemIndex++;
-            if (selectedItemIndex == menuItemCount) {
+            if (selectedItemIndex == menuItemCount)
+            {
                 selectedItemIndex = 0;
             }
             menuItems[selectedItemIndex].setFillColor(Color::Red);
         }
     }
 
-    void toggleInstructions() {
+    void toggleInstructions()
+    {
         howtoplay = !howtoplay;
     }
 
-    //void toggleVFX() {
-    //    vfxEnabled = !vfxEnabled;
-    //    menuItems[0].setString(vfxEnabled ? "VFX: ON" : "VFX: OFF");
-    //}
+    // void toggleVFX() {
+    //     vfxEnabled = !vfxEnabled;
+    //     menuItems[0].setString(vfxEnabled ? "VFX: ON" : "VFX: OFF");
+    // }
 
-    void setInstruction(const std::string& newInstruction) {
+    void setInstruction(const std::string &newInstruction)
+    {
         instruction.setString(newInstruction);
     }
 
-    int getSelectedItem() const {
+    int getSelectedItem() const
+    {
         return selectedItemIndex;
     }
 };
-
