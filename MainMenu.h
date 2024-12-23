@@ -87,6 +87,7 @@ public:
             menuItems[i].setString(items[i]);
             menuItems[i].setPosition(Vector2f(xPosition, height / (menuItemCount + 1) * (i + 1)));
             menuItems[i].setFillColor(i == 0 ? Color::Red : (isMain ? Color::Black : Color::White));
+            menuItems[i].setOutlineColor(Color::White);
         }
 
         instruction.setFont(font);

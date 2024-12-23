@@ -1,27 +1,34 @@
 {
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "Build SFML Project",
-      "type": "shell",
-      "command": "g++",
-      "args": [
-        "-g",
-        "-std=gnu++17",
-        "-I/usr/include/SFML",
-        "${workspaceFolder}/Main.cpp",
-        "-o",
-        "${workspaceFolder}/app",
-        "-lsfml-graphics",
-        "-lsfml-window",
-        "-lsfml-system"
-      ],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
-      "problemMatcher": ["$gcc"],
-      "detail": "Task for building SFML project"
-    }
-  ]
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe build active file with SFML",
+            "command": "C:\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "-I", "C:/SFML/include", // Path to SFML include directory
+                "-L", "C:/SFML/lib",     // Path to SFML library directory
+                "-lsfml-graphics",
+                "-lsfml-window",
+                "-lsfml-system",
+                "-lsfml-audio"           // Add this line to link the audio library
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Task modified to include SFML libraries."
+        }
+    ],
+    "version": "2.0.0"
 }
