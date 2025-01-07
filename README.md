@@ -38,5 +38,3 @@ Wordle game Features:
   / For VFX decrease
 
 In wordle We have only 100 words of dictionary from which you can play the game
-
-This project is based on original code of https://github.com/ibrahim0795/Gameboy-in-Cpp-using-SFML
